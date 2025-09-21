@@ -10,3 +10,17 @@ burger.addEventListener('click', () => {
 	menu.classList.toggle('active');
 	body.classList.toggle('lock'); // додаємо/знімаємо блокування скролу
 });
+// Перехід по якорях
+const menuLinks = document.querySelectorAll('.header__link');
+
+menuLinks.forEach(link => {
+	link.addEventListener('click', () => {
+		// Розблокувати прокрутку
+		document.body.classList.remove('lock');
+
+		// Закрити меню
+		if (menu.classList.contains('active')) {
+			menu.classList.remove('active');
+		}
+	});
+});
