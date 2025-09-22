@@ -41,7 +41,7 @@ body {
 	width: 100%;
 	font-size: 100%;
 	line-height: 1;
-	font-size: 14px;
+	font-size: 20px;
 }
 
 /*Змушує елементи форми наслідувати сімейство шрифтів*/
@@ -119,7 +119,7 @@ header::before {
 	left: 0;
 	width: 100%;
 	height: 100%;
-	background-color: #5e5373;
+	background-color: #0d9d08;
 	z-index: 2;
 }
 
@@ -225,7 +225,7 @@ header::before {
 		width: 100%;
 		height: 100%;
 		overflow: auto;
-		background-color: #18b5a4;
+		background-color: #98b518;
 		padding: 70px 10px 20px 10px;
 		transition: all 0.3s ease 0s;
 	}
@@ -263,7 +263,7 @@ header::before {
 }
 
 .content__text {
-	font-size: 18px;
+	font-size: 20px;
 	line-height: 45px;
 }
 
@@ -271,8 +271,27 @@ header::before {
 	margin: 0 0 20px 0;
 }
 
+.content__text h2 {
+	margin: 0 0 20px 0;
+	font-weight: 700;
+	font-size: 35px;
+}
+
 @media (max-width: 767px) {
 	.content {
 		padding: 70px 0 0 0;
+	}
+
+	.content__text {
+		font-size: 18px;
+		line-height: 25px;
+	}
+
+	.content__text h2 {
+		margin: 0 0 15px 0;
+		font-weight: 700;
+		font-size: 30px;
+		scroll-margin-top: 80px;
+		/* відступ від верхнього краю */
 	}
 }
