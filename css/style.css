@@ -96,12 +96,33 @@ h6 {
 /*--------------------*/
 body {
   font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+  background: #f3f3f3;
+  overflow-x: hidden;
+}
+
+.wrapper {
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
 }
 
 .container {
-  max-width: 1180px;
+  max-width: 73.75rem;
   margin: 0 auto;
-  padding: 0 10px;
+  padding: 0 0.625rem;
 }
 
 .header {
@@ -110,17 +131,7 @@ body {
   top: 0;
   left: 0;
   z-index: 50;
-}
-
-header::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #0d9d08;
-  z-index: 2;
+  background-color: #749aa5;
 }
 
 .header__body {
@@ -128,10 +139,9 @@ header::before {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  height: 80px;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  height: 5rem;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -139,8 +149,8 @@ header::before {
 
 .header__logo {
   -webkit-box-flex: 0;
-      -ms-flex: 0 0 60px;
-          flex: 0 0 60px;
+      -ms-flex: 0 0 3.75rem;
+          flex: 0 0 3.75rem;
   border-radius: 50%;
   overflow: hidden;
   z-index: 3;
@@ -172,6 +182,10 @@ header::before {
   text-transform: uppercase;
 }
 
+.icons :hover {
+  background-color: #555;
+}
+
 @media (max-width: 767px) {
   body.lock {
     overflow: hidden;
@@ -181,7 +195,8 @@ header::before {
     display: block;
     width: 30px;
     height: 20px;
-    z-index: 3;
+    z-index: 51;
+    display: block !important;
   }
   .header__burger::before,
   .header__burger::after {
@@ -231,7 +246,7 @@ header::before {
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: #98b518;
+    background-color: #5a7379;
     padding: 70px 10px 20px 10px;
     -webkit-transition: all 0.3s ease 0s;
     transition: all 0.3s ease 0s;
@@ -240,6 +255,7 @@ header::before {
     top: 0;
     -webkit-transition: all 0.3s ease 0s;
     transition: all 0.3s ease 0s;
+    /* перезаписує */
   }
   .header__body {
     height: 50px;
@@ -260,38 +276,157 @@ header::before {
     line-height: 1.5;
   }
 }
-.content {
-  padding: 100px 0 0 0;
+.layout {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
 }
 
 .content__text {
-  font-size: 20px;
-  line-height: 45px;
+  font-size: 1.25rem;
+  line-height: 1.0625rem;
 }
 
 .content__text p {
-  margin: 0 0 20px 0;
+  margin: 0 0 1.25rem 0;
 }
 
-.content__text h2 {
+h2 {
   margin: 0 0 20px 0;
   font-weight: 700;
   font-size: 35px;
+  scroll-margin-top: 130px;
+}
+
+#about {
+  margin-top: 130px;
 }
 
 @media (max-width: 767px) {
   .content {
-    padding: 70px 0 0 0;
+    margin: 0;
   }
   .content__text {
     font-size: 18px;
     line-height: 25px;
   }
-  .content__text h2 {
+  h2 {
     margin: 0 0 15px 0;
     font-weight: 700;
     font-size: 30px;
-    scroll-margin-top: 80px;
     /* відступ від верхнього краю */
+    scroll-margin-top: 100px;
+    /* висота шапки */
   }
+  #about {
+    margin-top: 90px;
+  }
+}
+.slider {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+.slider .slides {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-transition: -webkit-transform 0.6s ease;
+  transition: -webkit-transform 0.6s ease;
+  transition: transform 0.6s ease;
+  transition: transform 0.6s ease, -webkit-transform 0.6s ease;
+}
+.slider .slide {
+  min-width: 100%;
+}
+.slider .slide img {
+  width: 100%;
+  height: 500px;
+  cursor: pointer;
+  display: block;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.slider-btn {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  border: none;
+  color: white;
+  font-size: 30px;
+  cursor: pointer;
+  padding: 10px 15px;
+  border-radius: 50%;
+  z-index: 10;
+}
+.slider-btn.prev {
+  left: 15px;
+}
+.slider-btn.next {
+  right: 15px;
+}
+.slider-btn:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 15px;
+  text-align: center;
+  -webkit-box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  max-width: 250px;
+  margin: auto;
+}
+
+.card img {
+  max-width: 100%;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.card h3 {
+  margin: 10px 0 5px;
+  font-size: 18px;
+}
+
+.card p {
+  font-size: 14px;
+  color: #555;
+  margin: 5px 0 10px;
+}
+
+.card .price {
+  display: block;
+  font-size: 16px;
+  font-weight: bold;
+  color: #e63946;
+}
+
+.footer {
+  margin-top: 0 auto;
+  color: white;
+  text-align: center;
+  padding: 0.625rem 0.9375rem;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 50;
+  background-color: #749aa5;
+}
+.footer:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.footer__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }

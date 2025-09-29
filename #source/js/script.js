@@ -24,3 +24,36 @@ menuLinks.forEach(link => {
 		}
 	});
 });
+
+// Слайдер
+const slides = document.querySelector('.slides');
+const slideItems = document.querySelectorAll('.slide');
+const prevBtn = document.querySelector('.prev');
+const nextBtn = document.querySelector('.next');
+
+let index = 0;
+
+function showSlide(i) {
+	if (i < 0) {
+		index = slideItems.length - 1;
+	} else if (i >= slideItems.length) {
+		index = 0;
+	} else {
+		index = i;
+	}
+	slides.style.transform = `translateX(-${index * 100}%)`;
+}
+
+prevBtn.addEventListener('click', () => showSlide(index - 1));
+nextBtn.addEventListener('click', () => showSlide(index + 1));
+
+// Автоперемикання (необов'язково)
+// setInterval(() => {
+// 	showSlide(index + 1);
+// }, 5000);
+
+
+// Перехід на сторінку товару
+function goToProduct(id) {
+	window.location.href = `product.html?id=${id}`;
+}

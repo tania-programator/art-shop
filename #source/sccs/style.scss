@@ -1,108 +1,32 @@
 @charset "UTF-8";
 
-/*Обнулення, звертаємось до всього документа*/
-/*обнуляє відступи та границі*/
-* {
-	padding: 0;
-	margin: 0;
-	border: 0;
-}
-
-/*Змінює підрахунок ширини блока так, щоб було зручніше верстати*/
-*,
-*:before,
-*:after {
-	box-sizing: border-box;
-}
-
-/*Прибирає лінії обводки в деяких браузерах,*/
-:focus,
-:active {
-	outline: none;
-}
-
-a:focus,
-a:active {
-	outline: none;
-}
-
-/*Робимо ці елементи блочними*/
-nav,
-footer,
-header,
-aside {
-	display: block;
-}
-
-/*Урівнюємо параметри в різних браузерах*/
-html,
-body {
-	height: 100%;
-	width: 100%;
-	font-size: 100%;
-	line-height: 1;
-	font-size: 20px;
-}
-
-/*Змушує елементи форми наслідувати сімейство шрифтів*/
-input,
-button,
-textarea {
-	font-family: inherit;
-}
-
-/*Прибирає деякі особливості в різних браузерах, чистить стилі маркованих списків*/
-input::-ms-clear {
-	display: none;
-}
-
-button {
-	cursor: pointer;
-}
-
-button::-moz-focus-inner {
-	padding: 0;
-	border: 0;
-}
-
-a,
-a:visited {
-	text-decoration: none;
-}
-
-a:hover {
-	text-decoration: none;
-}
-
-ul li {
-	list-style: none;
-}
-
-img {
-	vertical-align: top;
-}
-
-/*Обнуляє заголовки*/
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	font-size: inherit;
-	font-weight: 400;
-}
+// Підключаю обнуляючий файл
+@import 'reset';
 
 /*--------------------*/
 body {
 	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	background: #f3f3f3;
+	overflow-x: hidden;
+
+}
+
+.wrapper {
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
 }
 
 .container {
-	max-width: 1180px;
+	max-width: 73.75rem;
 	margin: 0 auto;
-	padding: 0 10px;
+	padding: 0 .625rem;
 }
+
 
 .header {
 	position: fixed;
@@ -110,29 +34,31 @@ body {
 	top: 0;
 	left: 0;
 	z-index: 50;
+	background-color: #749aa5;
 }
 
-header::before {
-	content: "";
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	background-color: #0d9d08;
-	z-index: 2;
-}
+// header::before {
+// 	content: "";
+// 	position: absolute;
+// 	top: 0;
+// 	left: 0;
+// 	width: 100%;
+// 	height: 100%;
+// 	background-color: #749aa5;
+// 	z-index: 2;
+// Закоментувала, бо не видно кнопок ❤️ 🛒
+// }
 
 .header__body {
 	position: relative;
 	display: flex;
-	justify-content: space-between;
-	height: 80px;
+	justify-content: space-around;
+	height: 5rem;
 	align-items: center;
 }
 
 .header__logo {
-	flex: 0 0 60px;
+	flex: 0 0 3.75rem;
 	border-radius: 50%;
 	overflow: hidden;
 	z-index: 3;
@@ -162,6 +88,14 @@ header::before {
 	text-transform: uppercase;
 }
 
+.icons {
+	:hover {
+		background-color: #555;
+	}
+}
+
+// .icon-btn {}
+
 @media (max-width: 767px) {
 	body.lock {
 		overflow: hidden;
@@ -172,7 +106,8 @@ header::before {
 		display: block;
 		width: 30px;
 		height: 20px;
-		z-index: 3;
+		z-index: 51;
+		display: block !important;
 	}
 
 	.header__burger::before,
@@ -225,7 +160,7 @@ header::before {
 		width: 100%;
 		height: 100%;
 		overflow: auto;
-		background-color: #98b518;
+		background-color: #5a7379;
 		padding: 70px 10px 20px 10px;
 		transition: all 0.3s ease 0s;
 	}
@@ -233,6 +168,8 @@ header::before {
 	.header__menu.active {
 		top: 0;
 		transition: all 0.3s ease 0s;
+		// display: block !important;
+		/* перезаписує */
 	}
 
 
@@ -258,28 +195,35 @@ header::before {
 	}
 }
 
-.content {
-	padding: 100px 0 0 0;
+.layout {
+	flex-grow: 1;
 }
 
+// .content {}
+
 .content__text {
-	font-size: 20px;
-	line-height: 45px;
+	font-size: 1.25rem;
+	line-height: 1.0625rem;
 }
 
 .content__text p {
-	margin: 0 0 20px 0;
+	margin: 0 0 1.25rem 0;
 }
 
-.content__text h2 {
+h2 {
 	margin: 0 0 20px 0;
 	font-weight: 700;
 	font-size: 35px;
+	scroll-margin-top: 130px;
+}
+
+#about {
+	margin-top: 130px;
 }
 
 @media (max-width: 767px) {
 	.content {
-		padding: 70px 0 0 0;
+		margin: 0;
 	}
 
 	.content__text {
@@ -287,11 +231,139 @@ header::before {
 		line-height: 25px;
 	}
 
-	.content__text h2 {
+	h2 {
 		margin: 0 0 15px 0;
 		font-weight: 700;
 		font-size: 30px;
-		scroll-margin-top: 80px;
 		/* відступ від верхнього краю */
+		scroll-margin-top: 100px;
+		/* висота шапки */
+	}
+
+	#about {
+		margin-top: 90px;
 	}
 }
+
+.slider {
+	position: relative;
+	overflow: hidden;
+	width: 100%;
+
+	.slides {
+		display: flex;
+		transition: transform 0.6s ease; // м’який перехід
+	}
+
+	.slide {
+		min-width: 100%;
+
+		img {
+			width: 100%;
+			height: 500px;
+			cursor: pointer;
+			display: block;
+			object-fit: contain; // якщо хочеш, щоб заповнювало контейнер
+
+		}
+	}
+}
+
+.slider-btn {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	background: rgba(0, 0, 0, 0.5);
+	border: none;
+	color: white;
+	font-size: 30px;
+	cursor: pointer;
+	padding: 10px 15px;
+	border-radius: 50%;
+	z-index: 10;
+
+	&.prev {
+		left: 15px;
+	}
+
+	&.next {
+		right: 15px;
+	}
+
+	&:hover {
+		background: rgba(0, 0, 0, 0.8);
+	}
+}
+
+.card {
+	background: #fff;
+	border-radius: 12px;
+	padding: 15px;
+	text-align: center;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+	max-width: 250px;
+	margin: auto;
+}
+
+.card img {
+	max-width: 100%;
+	border-radius: 8px;
+	cursor: pointer;
+}
+
+.card h3 {
+	margin: 10px 0 5px;
+	font-size: 18px;
+}
+
+.card p {
+	font-size: 14px;
+	color: #555;
+	margin: 5px 0 10px;
+}
+
+.card .price {
+	display: block;
+	font-size: 16px;
+	font-weight: bold;
+	color: #e63946;
+}
+
+// .pictures {}
+
+// .container {}
+
+// .pictures__text {}
+
+// .pictures__arts {}
+
+// .pictures__tobuy {}
+
+// .pictures__contacts {}
+
+// .pictures__information {}
+
+.footer {
+	margin-top: 0 auto;
+	color: white;
+	text-align: center;
+	padding: .625rem .9375rem;
+	width: 100%;
+	top: 0;
+	left: 0;
+	z-index: 50;
+	background-color: #749aa5;
+
+	&:hover {
+		background-color: rgba(0, 0, 0, 0.8);
+	}
+}
+
+.footer__container {
+	display: flex;
+	justify-content: space-between;
+}
+
+// .footer__copirighting {}
+
+// .footer__cards {}
