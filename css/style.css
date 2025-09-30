@@ -182,8 +182,40 @@ body {
   text-transform: uppercase;
 }
 
-.icons :hover {
-  background-color: #555;
+.icons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.icons button {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  margin: 0 5px;
+  padding: 8px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.icon-like-btn {
+  background: #ffccd5;
+}
+.icon-like-btn:hover {
+  background: #ff99aa;
+}
+
+.icon-cart-btn {
+  background: #d1f7c4;
+}
+.icon-cart-btn:hover {
+  background: #aaf7a2;
 }
 
 @media (max-width: 767px) {
@@ -275,6 +307,19 @@ body {
     font-size: 24px;
     line-height: 1.5;
   }
+  .icons button {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    margin: 0 5px;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+  }
 }
 .layout {
   -webkit-box-flex: 1;
@@ -331,10 +376,10 @@ h2 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-transition: -webkit-transform 0.6s ease;
-  transition: -webkit-transform 0.6s ease;
-  transition: transform 0.6s ease;
-  transition: transform 0.6s ease, -webkit-transform 0.6s ease;
+  -webkit-transition: -webkit-transform 0.9s ease;
+  transition: -webkit-transform 0.9s ease;
+  transition: transform 0.9s ease;
+  transition: transform 0.9s ease, -webkit-transform 0.9s ease;
 }
 .slider .slide {
   min-width: 100%;
@@ -405,6 +450,46 @@ h2 {
   font-size: 16px;
   font-weight: bold;
   color: #e63946;
+}
+
+.card-actions {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 10px;
+}
+
+.card-actions button {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  margin: 0 5px;
+  padding: 8px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.like-btn {
+  background: #ffccd5;
+}
+
+.like-btn:hover {
+  background: #ff99aa;
+}
+
+.cart-btn {
+  background: #d1f7c4;
+}
+
+.cart-btn:hover {
+  background: #aaf7a2;
 }
 
 .footer {

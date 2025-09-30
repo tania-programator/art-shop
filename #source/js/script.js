@@ -47,11 +47,46 @@ function showSlide(i) {
 prevBtn.addEventListener('click', () => showSlide(index - 1));
 nextBtn.addEventListener('click', () => showSlide(index + 1));
 
-// Автоперемикання (необов'язково)
+// Автоперемикання(необов'язково)
 // setInterval(() => {
 // 	showSlide(index + 1);
-// }, 5000);
+// }, 4500);
 
+// Вподобайки та кошик
+// Масиви для зберігання даних
+let favorites = [];
+let cart = [];
+
+// Приклад даних товарів
+const products = [
+	{ id: 1, name: "Spring girl", price: 1200 },
+	{ id: 2, name: "The life of one rose", price: 1500 },
+	{ id: 3, name: "Red flower", price: 1000 }
+];
+
+// Додати у вподобані
+function addToFavorites(id) {
+	const product = products.find(p => p.id === id);
+	if (product && !favorites.includes(product)) {
+		favorites.push(product);
+		updateHeader();
+	}
+}
+
+// Додати у кошик
+function addToCart(id) {
+	const product = products.find(p => p.id === id);
+	if (product) {
+		cart.push(product);
+		updateHeader();
+	}
+}
+
+// Оновити лічильники у шапці
+function updateHeader() {
+	document.getElementById("fav-count").textContent = favorites.length;
+	document.getElementById("cart-count").textContent = cart.length;
+}
 
 // Перехід на сторінку товару
 function goToProduct(id) {

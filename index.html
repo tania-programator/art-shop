@@ -54,8 +54,8 @@
 						</ul>
 					</nav>
 					<div class="icons">
-						<button class="icon-btn">❤️</button>
-						<button class="icon-btn">🛒</button>
+						<button class="icon-like-btn">❤️(<span id="fav-count">0</span>)</button>
+						<button class="icon-cart-btn">🛒(<span id="cart-count">0</span>)</button>
 					</div>
 				</div>
 			</div>
@@ -90,6 +90,10 @@
 					<!-- Карточка товару 1 -->
 					<div class="slide">
 						<div class="card">
+							<div class="card-actions">
+								<button class="like-btn" onclick="addToFavorites(1)">❤️ Вподобати</button>
+								<button class="cart-btn" onclick="addToCart(1)">🛒 До кошика</button>
+							</div>
 							<img src="img/Spring girl.jpg" alt="Spring girl" onclick="goToProduct(1)">
 							<h3>Spring girl</h3>
 							<p>Легка весняна картина, що наповнює кімнату теплом.</p>
@@ -100,6 +104,10 @@
 					<!-- Карточка товару 2 -->
 					<div class="slide">
 						<div class="card">
+							<div class="card-actions">
+								<button class="like-btn" onclick="addToFavorites(2)">❤️ Вподобати</button>
+								<button class="cart-btn" onclick="addToCart(2)">🛒 До кошика</button>
+							</div>
 							<img src="img/The life of one rose.jpg" alt="The life of one rose" onclick="goToProduct(2)">
 							<h3>The life of one rose</h3>
 							<p>Вишукана композиція з трояндою у центрі.</p>
@@ -110,6 +118,10 @@
 					<!-- Карточка товару 3 -->
 					<div class="slide">
 						<div class="card">
+							<div class="card-actions">
+								<button class="like-btn" onclick="addToFavorites(3)">❤️ Вподобати</button>
+								<button class="cart-btn" onclick="addToCart(3)">🛒 До кошика</button>
+							</div>
 							<img src="img/Red flower.jpg" alt="Red flower" onclick="goToProduct(3)">
 							<h3>Red flower</h3>
 							<p>Яскрава робота, що привертає увагу.</p>
@@ -123,12 +135,9 @@
 				<button class="slider-btn prev">⟨</button>
 				<button class="slider-btn next">⟩</button>
 			</div>
-
 			<section class="pictures">
 				<div class="container">
 					<div class="pictures__text">
-
-
 						<!-- Розділ "Як купити картину" -->
 						<div class="pictures__tobuy">
 							<h2 id="tobuy">Як купити картину</h2>

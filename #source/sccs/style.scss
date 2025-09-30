@@ -89,14 +89,39 @@ body {
 }
 
 .icons {
-	:hover {
-		background-color: #555;
+	display: flex;
+	justify-content: space-around;
+}
+
+.icons button {
+	flex: 1;
+	margin: 0 5px;
+	padding: 8px;
+	border: none;
+	border-radius: 8px;
+	cursor: pointer;
+	font-size: 14px;
+	transition: 0.3s;
+}
+
+.icon-like-btn {
+	background: #ffccd5;
+
+	&:hover {
+		background: #ff99aa;
 	}
 }
 
-// .icon-btn {}
+.icon-cart-btn {
+	background: #d1f7c4;
+
+	&:hover {
+		background: #aaf7a2;
+	}
+}
 
 @media (max-width: 767px) {
+
 	body.lock {
 		overflow: hidden;
 	}
@@ -193,6 +218,17 @@ body {
 		font-size: 24px;
 		line-height: 1.5;
 	}
+
+	.icons button {
+		flex: 1;
+		margin: 0 5px;
+		padding: 10px;
+		border: none;
+		border-radius: 8px;
+		cursor: pointer;
+		font-size: 14px;
+		transition: 0.3s;
+	}
 }
 
 .layout {
@@ -222,6 +258,7 @@ h2 {
 }
 
 @media (max-width: 767px) {
+
 	.content {
 		margin: 0;
 	}
@@ -252,7 +289,7 @@ h2 {
 
 	.slides {
 		display: flex;
-		transition: transform 0.6s ease; // м’який перехід
+		transition: transform 0.9s ease; // м’який перехід
 	}
 
 	.slide {
@@ -293,6 +330,7 @@ h2 {
 	&:hover {
 		background: rgba(0, 0, 0, 0.8);
 	}
+
 }
 
 .card {
@@ -327,6 +365,40 @@ h2 {
 	font-size: 16px;
 	font-weight: bold;
 	color: #e63946;
+}
+
+// Вподобайки та кошик
+.card-actions {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 10px;
+}
+
+.card-actions button {
+	flex: 1;
+	margin: 0 5px;
+	padding: 8px;
+	border: none;
+	border-radius: 8px;
+	cursor: pointer;
+	font-size: 14px;
+	transition: 0.3s;
+}
+
+.like-btn {
+	background: #ffccd5;
+}
+
+.like-btn:hover {
+	background: #ff99aa;
+}
+
+.cart-btn {
+	background: #d1f7c4;
+}
+
+.cart-btn:hover {
+	background: #aaf7a2;
 }
 
 // .pictures {}
