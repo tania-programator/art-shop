@@ -59,35 +59,116 @@ let cart = [];
 
 // Приклад даних товарів
 const products = [
-	{ id: 1, name: "Spring girl", price: 1200 },
-	{ id: 2, name: "The life of one rose", price: 1500 },
-	{ id: 3, name: "Red flower", price: 1000 }
+	{ id: 1, name: "Spring girl", price: 1200, img: "img/Spring girl.jpg" },
+	{ id: 2, name: "The life of one rose", price: 1500, img: "img/The life of one rose.jpg" },
+	{ id: 3, name: "Red flower", price: 1000, img: "img/Red flower.jpg" }
 ];
 
 // Додати у вподобані
 function addToFavorites(id) {
+	id = Number(id);
 	const product = products.find(p => p.id === id);
-	if (product && !favorites.includes(product)) {
+	if (!product) return;
+	if (!favorites.some(p => p.id === id)) {
 		favorites.push(product);
-		updateHeader();
 	}
+	updateHeader();
 }
 
 // Додати у кошик
+
 function addToCart(id) {
+	id = Number(id);
 	const product = products.find(p => p.id === id);
-	if (product) {
-		cart.push(product);
-		updateHeader();
-	}
+	if (!product) return;
+	cart.push(product);
+	updateHeader();
 }
 
+// --- Видалення товару ---
+function removeItem(id, type) {
+	id = Number(id);
+	if (type === "fav") {
+		favorites = favorites.filter(p => p.id !== id);
+		renderDropdown("fav-dropdown", favorites, "fav");
+	} else if (type === "cart") {
+		cart = cart.filter(p => p.id !== id);
+		renderDropdown("cart-dropdown", cart, "cart");
+	}
+	updateHeader();
+}
 // Оновити лічильники у шапці
 function updateHeader() {
 	document.getElementById("fav-count").textContent = favorites.length;
 	document.getElementById("cart-count").textContent = cart.length;
 }
 
+// --- Рендер списку у dropdown ---
+function renderDropdown(containerId, items, type) {
+	const container = document.getElementById(containerId);
+	if (!container) return;
+
+	if (items.length === 0) {
+		container.innerHTML = "<p>Порожньо</p>";
+		return;
+	}
+
+	container.innerHTML = items.map(p => `
+    <div class="dropdown-item">
+      <img src="${p.img}" alt="${p.name}">
+      <div class="info">
+        <span class="name">${p.name}</span>
+        <span class="price">${p.price} грн</span>
+      </div>
+      <button class="remove-btn" data-id="${p.id}" data-type="${type}">❌</button>
+    </div>
+  `).join("");
+
+	if (type === "cart") {
+		const total = items.reduce((sum, p) => sum + p.price, 0);
+		container.innerHTML += `<div class="dropdown-item total"><b>Разом: ${total} грн</b></div>`;
+	}
+}
+
+// --- Перемикання списків ---
+function toggleDropdown(id) {
+	document.querySelectorAll(".dropdown").forEach(d => {
+		if (d.id === id) {
+			d.classList.toggle("open");
+		} else {
+			d.classList.remove("open");
+		}
+	});
+}
+
+// --- Обробка кліків ---
+document.addEventListener("click", (e) => {
+	// Закрити, якщо клік поза dropdown
+	if (!e.target.closest(".dropdown-wrapper")) {
+		document.querySelectorAll(".dropdown").forEach(d => d.classList.remove("open"));
+	}
+
+	// Видалення
+	const btn = e.target.closest(".remove-btn");
+	if (btn) {
+		removeItem(btn.dataset.id, btn.dataset.type);
+	}
+});
+
+// Кнопки у шапці
+document.getElementById("fav-btn").addEventListener("click", () => {
+	renderDropdown("fav-dropdown", favorites, "fav");
+	toggleDropdown("fav-dropdown");
+});
+
+document.getElementById("cart-btn").addEventListener("click", () => {
+	renderDropdown("cart-dropdown", cart, "cart");
+	toggleDropdown("cart-dropdown");
+});
+
+// Доступ для onclick у карточках
+window.addToFavorites = addToFavorites;
+window.addToCart = addToCart;
 // Перехід на сторінку товару
 function goToProduct(id) {
 	window.location.href = `product.html?id=${id}`;

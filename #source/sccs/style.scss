@@ -91,6 +91,7 @@ body {
 .icons {
 	display: flex;
 	justify-content: space-around;
+	gap: 20px;
 }
 
 .icons button {
@@ -118,6 +119,82 @@ body {
 	&:hover {
 		background: #aaf7a2;
 	}
+}
+
+// Випадаюче вікно вподобаних та відібраних для покупки товарів
+
+.dropdown-wrapper {
+	position: relative;
+}
+
+.dropdown {
+	position: absolute;
+	top: 100%;
+	right: 0;
+	width: 220px;
+	background: #fff;
+	border: 1px solid #ccc;
+	border-radius: 10px;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+	padding: 10px;
+	display: none;
+	z-index: 100;
+}
+
+.dropdown.open {
+	display: block;
+}
+
+.dropdown p {
+	font-size: 14px;
+	color: #666;
+	margin: 0;
+}
+
+.dropdown-item {
+	display: flex;
+	align-items: center;
+	/* вирівнює все по вертикалі */
+	justify-content: space-between;
+	padding: 6px 0;
+	border-bottom: 1px solid #eee;
+	gap: 8px;
+	/* невеликий відступ між блоками */
+}
+
+.dropdown-item img {
+	width: 40px;
+	height: 40px;
+	object-fit: cover;
+	/* щоб не спотворювало */
+	border-radius: 6px;
+	/* закруглені кути */
+	margin-right: 10px;
+	/* відступ справа від картинки */
+	flex-shrink: 0;
+	/* не стискається при маленькому контейнері */
+}
+
+.dropdown-item:last-child {
+	border-bottom: none;
+}
+
+// Кнопка видалення з кошика та вподобайок
+.remove-btn {
+	float: right;
+	border: none;
+	background: transparent;
+	color: #e63946;
+	font-size: 14px;
+	cursor: pointer;
+	flex-shrink: 0;
+	/* не стискається */
+	align-self: center;
+	/* завжди по центру рядка */
+}
+
+.remove-btn:hover {
+	color: #b00020;
 }
 
 @media (max-width: 767px) {

@@ -54,8 +54,14 @@
 						</ul>
 					</nav>
 					<div class="icons">
-						<button class="icon-like-btn">❤️(<span id="fav-count">0</span>)</button>
-						<button class="icon-cart-btn">🛒(<span id="cart-count">0</span>)</button>
+						<div class="dropdown-wrapper">
+							<button id="fav-btn" class="icon-like-btn">❤️(<span id="fav-count">0</span>)</button>
+							<div id="fav-dropdown" class="dropdown"></div>
+						</div>
+						<div class="dropdown-wrapper">
+							<button id="cart-btn" class="icon-cart-btn">🛒(<span id="cart-count">0</span>)</button>
+							<div id="cart-dropdown" class="dropdown"></div>
+						</div>
 					</div>
 				</div>
 			</div>

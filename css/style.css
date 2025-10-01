@@ -188,6 +188,7 @@ body {
   display: flex;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+  gap: 20px;
 }
 
 .icons button {
@@ -216,6 +217,91 @@ body {
 }
 .icon-cart-btn:hover {
   background: #aaf7a2;
+}
+
+.dropdown-wrapper {
+  position: relative;
+}
+
+.dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 220px;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  -webkit-box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  padding: 10px;
+  display: none;
+  z-index: 100;
+}
+
+.dropdown.open {
+  display: block;
+}
+
+.dropdown p {
+  font-size: 14px;
+  color: #666;
+  margin: 0;
+}
+
+.dropdown-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  /* вирівнює все по вертикалі */
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 6px 0;
+  border-bottom: 1px solid #eee;
+  gap: 8px;
+  /* невеликий відступ між блоками */
+}
+
+.dropdown-item img {
+  width: 40px;
+  height: 40px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  /* щоб не спотворювало */
+  border-radius: 6px;
+  /* закруглені кути */
+  margin-right: 10px;
+  /* відступ справа від картинки */
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  /* не стискається при маленькому контейнері */
+}
+
+.dropdown-item:last-child {
+  border-bottom: none;
+}
+
+.remove-btn {
+  float: right;
+  border: none;
+  background: transparent;
+  color: #e63946;
+  font-size: 14px;
+  cursor: pointer;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  /* не стискається */
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  /* завжди по центру рядка */
+}
+
+.remove-btn:hover {
+  color: #b00020;
 }
 
 @media (max-width: 767px) {
