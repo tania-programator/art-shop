@@ -61,7 +61,10 @@ let cart = [];
 const products = [
 	{ id: 1, name: "Spring girl", price: 1200, img: "img/Spring girl.jpg" },
 	{ id: 2, name: "The life of one rose", price: 1500, img: "img/The life of one rose.jpg" },
-	{ id: 3, name: "Red flower", price: 1000, img: "img/Red flower.jpg" }
+	{ id: 3, name: "Red flower", price: 1000, img: "img/Red flower.jpg" },
+	{ id: 4, name: "Challenge", price: 3000, img: "img/Challenge.jpg" },
+	{ id: 5, name: "Nice", price: 3000, img: "img/Nice.jpg" },
+	{ id: 6, name: "Kiss", price: 500, img: "img/Kiss.jpg" },
 ];
 
 // Додати у вподобані

@@ -179,6 +179,31 @@ body {
 	border-bottom: none;
 }
 
+.dropdown-item img {
+	width: 40px;
+	height: 40px;
+	object-fit: cover;
+	border-radius: 6px;
+	flex-shrink: 0;
+}
+
+.dropdown-item .info {
+	flex: 1;
+	/* текст займає весь доступний простір */
+}
+
+.dropdown-item .name {
+	display: block;
+	font-size: 14px;
+	font-weight: 500;
+	line-height: 1.2;
+}
+
+.dropdown-item .price {
+	font-size: 13px;
+	color: #555;
+}
+
 // Кнопка видалення з кошика та вподобайок
 .remove-btn {
 	float: right;
@@ -316,7 +341,7 @@ body {
 
 .content__text {
 	font-size: 1.25rem;
-	line-height: 1.0625rem;
+	line-height: 1.2;
 }
 
 .content__text p {
@@ -516,3 +541,58 @@ h2 {
 // .footer__copirighting {}
 
 // .footer__cards {}
+.grid-container {
+	display: grid;
+	/* за замовчуванням 3 колонки */
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	/* адаптивна сітка */
+	grid-template-rows: auto;
+	gap: 20px;
+	max-width: 1000px;
+	margin: 0 auto;
+	margin-top: 130px;
+	padding: 10px;
+}
+
+.grid-item {
+	background: #f9f9f9;
+	padding: 10px;
+	border-radius: 8px;
+	overflow: hidden;
+	/* обрізає зайве */
+	text-align: center;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.card img,
+.grid-item>img {
+	width: 100%;
+	height: 200px;
+	/* єдина висота для всіх картинок */
+	object-fit: cover;
+	/* обрізає зайве, але виглядає рівно */
+	border-radius: 8px;
+	display: block;
+	margin: 0 auto;
+}
+
+.grid-item p {
+	padding: 10px;
+	text-align: center;
+}
+
+/* --- Адаптивність --- */
+
+/* Якщо екран менше ніж 900px → 2 колонки */
+@media (max-width: 900px) {
+	.grid-container {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+/* Якщо екран менше ніж 600px → 1 колонка */
+@media (max-width: 600px) {
+	.grid-container {
+		grid-template-columns: 1fr;
+	}
+}
