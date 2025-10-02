@@ -58,13 +58,16 @@ let favorites = [];
 let cart = [];
 
 // Приклад даних товарів
+const basePath = window.location.pathname.includes('/products/') ? '../img/' : 'img/';
 const products = [
-	{ id: 1, name: "Spring girl", price: 1200, img: "img/Spring girl.jpg" },
+	{ id: 1, name: "Spring girl", price: 1200, img: basePath + "Spring girl.jpg" },
 	{ id: 2, name: "The life of one rose", price: 1500, img: "img/The life of one rose.jpg" },
 	{ id: 3, name: "Red flower", price: 1000, img: "img/Red flower.jpg" },
 	{ id: 4, name: "Challenge", price: 3000, img: "img/Challenge.jpg" },
 	{ id: 5, name: "Nice", price: 3000, img: "img/Nice.jpg" },
 	{ id: 6, name: "Kiss", price: 500, img: "img/Kiss.jpg" },
+	{ id: 7, name: "The wind", price: 2500, img: "../img/The wind.jpg" },
+	{ id: 8, name: "Flower wall", price: 2000, img: "../img/Flower wall.jpg" },
 ];
 
 // Додати у вподобані
