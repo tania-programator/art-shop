@@ -60,14 +60,15 @@ let cart = [];
 // Приклад даних товарів
 const basePath = window.location.pathname.includes('/products/') ? '../img/' : 'img/';
 const products = [
-	{ id: 1, name: "Spring girl", price: 1200, img: basePath + "Spring girl.jpg" },
-	{ id: 2, name: "The life of one rose", price: 1500, img: "img/The life of one rose.jpg" },
-	{ id: 3, name: "Red flower", price: 1000, img: "img/Red flower.jpg" },
-	{ id: 4, name: "Challenge", price: 3000, img: "img/Challenge.jpg" },
-	{ id: 5, name: "Nice", price: 3000, img: "img/Nice.jpg" },
-	{ id: 6, name: "Kiss", price: 500, img: "img/Kiss.jpg" },
-	{ id: 7, name: "The wind", price: 2500, img: "../img/The wind.jpg" },
-	{ id: 8, name: "Flower wall", price: 2000, img: "../img/Flower wall.jpg" },
+	// { id: 1, name: "Spring girl", price: 1200, img: basePath + "Spring_girl.jpg" },
+	{ id: 1, name: "Spring girl", price: 1200, category: "clean", img: basePath + "clean/Spring_girl.jpg" },
+	{ id: 2, name: "The life of one rose", price: 1500, category: "study", img: basePath + "study/The_life_of_one_rose.jpg" },
+	{ id: 3, name: "Red flower", price: 1000, category: "decoration", img: basePath + "decoration/Red_flower.jpg" },
+	{ id: 4, name: "Challenge", price: 3000, category: "white on black", img: basePath + "white on black/Challenge.jpg" },
+	{ id: 5, name: "Nice", price: 3000, category: "portraits", img: basePath + "portraits/Nice.jpg" },
+	{ id: 6, name: "Kiss", price: 500, category: "bookmarks", img: basePath + "bookmarks/Kiss.jpg" },
+	{ id: 7, name: "The wind", price: 2500, category: "clean", img: basePath + "clean/The_wind.jpg" },
+	{ id: 8, name: "Flower wall", price: 2000, category: "clean", img: basePath + "clean/Flower_wall.jpg" },
 ];
 
 // Додати у вподобані
