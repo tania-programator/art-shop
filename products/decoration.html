@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Spring girl – Чисті картини</title>
+	<link rel="stylesheet" href="../css/style.css"> <!-- піднімаємось на рівень вище -->
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header">
+			<!-- Обмежувач ширини контентної частини -->
+			<div class="container">
+				<!-- майбутній флекс-контейнер -->
+				<div class="header__body">
+					<!-- логотип у вигляді посилання -->
+					<a href="#" class="header__logo">
+						<!-- картинка логотипу -->
+						<img src="../img/avatar.jpg" alt="аватар">
+					</a>
+					<!-- бургер -->
+					<div class="header__burger">
+						<!-- span він потрібен для малювання бургера -->
+						<span></span>
+					</div>
+					<!-- меню -->
+					<nav class="header__menu">
+						<!-- список -->
+						<ul class="header__list">
+							<li>
+								<a href="../index.html#about" class="header__link">Про художника</a>
+							</li>
+							<li>
+								<a href="../index.html#arts" class="header__link">Картини</a>
+							</li>
+							<li>
+								<a href="../index.html#tobuy" class="header__link">Як купити картину</a>
+							</li>
+							<li>
+								<a href="../index.html#contacts" class="header__link">Контакти</a>
+							</li>
+							<li>
+								<a href="../index.html#information" class="header__link">Корисна інформація</a>
+							</li>
+						</ul>
+					</nav>
+					<div class="icons">
+						<div class="dropdown-wrapper">
+							<button id="fav-btn" class="icon-like-btn">❤️(<span id="fav-count">0</span>)</button>
+							<div id="fav-dropdown" class="dropdown"></div>
+						</div>
+						<div class="dropdown-wrapper">
+							<button id="cart-btn" class="icon-cart-btn">🛒(<span id="cart-count">0</span>)</button>
+							<div id="cart-dropdown" class="dropdown"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+		<main class="product-page">
+			<section class="content">
+				<div class="container">
+					<div class="content__text">
+						<!-- Розділ "Чисті картини" -->
+						<div class="content__clean">
+							<h2 id="about">Прикрашення простору</h2>
+							<p>Ці картини створені для прикрашення домівок, кафе, кабінетів.</p>
+							<p> Використані матеріали: .</p>
+							<p></p>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<div class="slider">
+				<div class="slides">
+
+					<!-- Карточка товару 1 -->
+					<div class="slide">
+						<div class="card">
+							<div class="card-actions">
+								<button class="like-btn" onclick="addToFavorites(3)">❤️ Вподобати</button>
+								<button class="cart-btn" onclick="addToCart(3)">🛒 До кошика</button>
+							</div>
+							<img src="../img/decoration/Red_flower.jpg" alt="Red flower" onclick="goToProduct(3)">
+							<h3>Red flower</h3>
+							<p>Яскрава робота, що привертає увагу.</p>
+							<p>Матеріали</p>
+							<span class="price">1000 грн</span>
+						</div>
+					</div>
+
+					<!-- Карточка товару 2 -->
+					<div class="slide">
+						<div class="card">
+							<div class="card-actions">
+								<button class="like-btn" onclick="addToFavorites(12)">❤️ Вподобати</button>
+								<button class="cart-btn" onclick="addToCart(12)">🛒 До кошика</button>
+							</div>
+							<img src="../img/decoration/The_night.jpg" alt="The night" onclick="goToProduct(12)">
+							<h3>The night</h3>
+							<p>Святкова південна ніч.</p>
+							<p>Матеріали</p>
+							<span class="price">5000 грн</span>
+						</div>
+					</div>
+
+
+				</div>
+
+				<!-- Кнопки гортання -->
+				<button class="slider-btn prev">⟨</button>
+				<button class="slider-btn next">⟩</button>
+			</div>
+		</main>
+	</div>
+	<script src="../js/script.js"></script>
+
+</body>
+
+</html>

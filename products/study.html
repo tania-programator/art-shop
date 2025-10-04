@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Spring girl – Чисті картини</title>
+	<link rel="stylesheet" href="../css/style.css"> <!-- піднімаємось на рівень вище -->
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header">
+			<!-- Обмежувач ширини контентної частини -->
+			<div class="container">
+				<!-- майбутній флекс-контейнер -->
+				<div class="header__body">
+					<!-- логотип у вигляді посилання -->
+					<a href="#" class="header__logo">
+						<!-- картинка логотипу -->
+						<img src="../img/avatar.jpg" alt="аватар">
+					</a>
+					<!-- бургер -->
+					<div class="header__burger">
+						<!-- span він потрібен для малювання бургера -->
+						<span></span>
+					</div>
+					<!-- меню -->
+					<nav class="header__menu">
+						<!-- список -->
+						<ul class="header__list">
+							<li>
+								<a href="../index.html#about" class="header__link">Про художника</a>
+							</li>
+							<li>
+								<a href="../index.html#arts" class="header__link">Картини</a>
+							</li>
+							<li>
+								<a href="../index.html#tobuy" class="header__link">Як купити картину</a>
+							</li>
+							<li>
+								<a href="../index.html#contacts" class="header__link">Контакти</a>
+							</li>
+							<li>
+								<a href="../index.html#information" class="header__link">Корисна інформація</a>
+							</li>
+						</ul>
+					</nav>
+					<div class="icons">
+						<div class="dropdown-wrapper">
+							<button id="fav-btn" class="icon-like-btn">❤️(<span id="fav-count">0</span>)</button>
+							<div id="fav-dropdown" class="dropdown"></div>
+						</div>
+						<div class="dropdown-wrapper">
+							<button id="cart-btn" class="icon-cart-btn">🛒(<span id="cart-count">0</span>)</button>
+							<div id="cart-dropdown" class="dropdown"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+		<main class="product-page">
+			<section class="content">
+				<div class="container">
+					<div class="content__text">
+						<!-- Розділ "Картини для навчання" -->
+						<div class="content__clean">
+							<h2 id="about">Картини для навчання</h2>
+							<p>Роботи, представлені в цій категорії, мають не лише естетичну, але й навчальну цінність.</p>
+							<p> Використані матеріали: .</p>
+							<p></p>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<div class="slider">
+				<div class="slides">
+
+					<!-- Карточка товару 1 -->
+					<div class="slide">
+						<div class="card">
+							<div class="card-actions">
+								<button class="like-btn" onclick="addToFavorites(9)">❤️ Вподобати</button>
+								<button class="cart-btn" onclick="addToCart(9)">🛒 До кошика</button>
+							</div>
+							<img src="../img/study/Ukrainian_bird.jpg" alt="Ukrainian bird" onclick="goToProduct(9)">
+							<h3>Ukrainian bird</h3>
+							<p>Картина з глибоким філософським змістом. Символізує героїчну боротьбу України проти російської
+								навали.</p>
+							<p>Матеріали</p>
+							<span class="price">5000 грн</span>
+						</div>
+					</div>
+
+					<!-- Карточка товару 2 -->
+					<div class="slide">
+						<div class="card">
+							<div class="card-actions">
+								<button class="like-btn" onclick="addToFavorites(2)">❤️ Вподобати</button>
+								<button class="cart-btn" onclick="addToCart(2)">🛒 До кошика</button>
+							</div>
+							<img src="../img/study/The_life_of_one_rose.jpg" alt="The life of one rose"
+								onclick="goToProduct(2)">
+							<h3>The life of one rose</h3>
+							<p>Короткий вік троянди в одній картині. Символізує плинність і красу життя.</p>
+							<span class="price">1500 грн</span>
+						</div>
+					</div>
+					<!-- Карточка товару 3 -->
+					<div class="slide">
+						<div class="card">
+							<div class="card-actions">
+								<button class="like-btn" onclick="addToFavorites(10)">❤️ Вподобати</button>
+								<button class="cart-btn" onclick="addToCart(10)">🛒 До кошика</button>
+							</div>
+							<img src="../img/study/Nazar.jpg" alt="Nazar" onclick="goToProduct(10)">
+							<h3>Nazar</h3>
+							<p>Війна триває. Багато людей гине. Дякую Назару за захист.</p>
+							<span class="price">7000 грн</span>
+						</div>
+					</div>
+
+					<!-- Карточка товару 4 -->
+					<div class="slide">
+						<div class="card">
+							<div class="card-actions">
+								<button class="like-btn" onclick="addToFavorites(11)">❤️ Вподобати</button>
+								<button class="cart-btn" onclick="addToCart(11)">🛒 До кошика</button>
+							</div>
+							<img src="../img/study/Eighty-four.jpg" alt="Nazar" onclick="goToProduct(11)">
+							<h3>Eighty-four</h3>
+							<p>Наші вдома! 84 полонених українців повернено.</p>
+							<span class="price">5000 грн</span>
+						</div>
+					</div>
+				</div>
+
+				<!-- Кнопки гортання -->
+				<button class="slider-btn prev">⟨</button>
+				<button class="slider-btn next">⟩</button>
+			</div>
+		</main>
+	</div>
+	<script src="../js/script.js"></script>
+
+</body>
+
+</html>

@@ -64,11 +64,21 @@ const products = [
 	{ id: 1, name: "Spring girl", price: 1200, category: "clean", img: basePath + "clean/Spring_girl.jpg" },
 	{ id: 2, name: "The life of one rose", price: 1500, category: "study", img: basePath + "study/The_life_of_one_rose.jpg" },
 	{ id: 3, name: "Red flower", price: 1000, category: "decoration", img: basePath + "decoration/Red_flower.jpg" },
-	{ id: 4, name: "Challenge", price: 3000, category: "white on black", img: basePath + "white on black/Challenge.jpg" },
+	{ id: 4, name: "Challenge", price: 3000, category: "portraits", img: basePath + "portraits/Challenge.jpg" },
 	{ id: 5, name: "Nice", price: 3000, category: "portraits", img: basePath + "portraits/Nice.jpg" },
-	{ id: 6, name: "Kiss", price: 500, category: "bookmarks", img: basePath + "bookmarks/Kiss.jpg" },
+	{ id: 6, name: "Kiss", price: 500, category: "love", img: basePath + "love/Kiss.jpg" },
 	{ id: 7, name: "The wind", price: 2500, category: "clean", img: basePath + "clean/The_wind.jpg" },
 	{ id: 8, name: "Flower wall", price: 2000, category: "clean", img: basePath + "clean/Flower_wall.jpg" },
+	{ id: 9, name: "Ukrainian bird", price: 5000, category: "study", img: basePath + "study/Ukrainian_bird.jpg" },
+	{ id: 10, name: "Nazar", price: 7000, category: "study", img: basePath + "study/Nazar.jpg" },
+	{ id: 11, name: "Eighty-four", price: 5000, category: "study", img: basePath + "study/Eighty-four.jpg" },
+	{ id: 12, name: "The_night", price: 5000, category: "decoration", img: basePath + "decoration/The_night.jpg" },
+	{ id: 13, name: "Coat_of_arms", price: 1000, category: "whiteonblack", img: basePath + "whiteonblack/Coat_of_arms.jpg" },
+	{ id: 14, name: "Horse", price: 1000, category: "whiteonblack", img: basePath + "whiteonblack/Horse.jpg" },
+	{ id: 15, name: "Care", price: 1200, category: "portraits", img: basePath + "portraits/Care.jpg" },
+	{ id: 16, name: "Care=compare", price: 1200, category: "portraits", img: basePath + "portraits/Care-compare.jpg" },
+	{ id: 17, name: "Nidalee", price: 2500, category: "portraits", img: basePath + "portraits/Nidalee.jpg" },
+	{ id: 14, name: "Horse", price: 1000, category: "portraits", img: basePath + "portraits/Horse.jpg" },
 ];
 
 // Додати у вподобані
