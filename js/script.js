@@ -76,9 +76,13 @@ const products = [
 	{ id: 13, name: "Coat_of_arms", price: 1000, category: "whiteonblack", img: basePath + "whiteonblack/Coat_of_arms.jpg" },
 	{ id: 14, name: "Horse", price: 1000, category: "whiteonblack", img: basePath + "whiteonblack/Horse.jpg" },
 	{ id: 15, name: "Care", price: 1200, category: "portraits", img: basePath + "portraits/Care.jpg" },
-	{ id: 16, name: "Care=compare", price: 1200, category: "portraits", img: basePath + "portraits/Care-compare.jpg" },
+	{ id: 16, name: "Care-compare", price: 1200, category: "portraits", img: basePath + "portraits/Care-compare.jpg" },
 	{ id: 17, name: "Nidalee", price: 2500, category: "portraits", img: basePath + "portraits/Nidalee.jpg" },
-	{ id: 14, name: "Horse", price: 1000, category: "portraits", img: basePath + "portraits/Horse.jpg" },
+	{ id: 18, name: "Summer_rest", price: 2000, category: "portraits", img: basePath + "portraits/Summer_rest.jpg" },
+	{ id: 19, name: "True_life", price: 2500, category: "portraits", img: basePath + "portraits/True_life.jpg" },
+	{ id: 20, name: "Kiss", price: 1200, category: "love", img: basePath + "love/Kiss.jpg" },
+	{ id: 21, name: "Signal_lights", price: 1500, category: "love", img: basePath + "love/Signal_lights.jpg" },
+	{ id: 22, name: "Strauberry", price: 500, category: "love", img: basePath + "love/Strauberry.jpg" },
 ];
 
 // Додати у вподобані
