@@ -399,11 +399,10 @@ h2 {
 
 		img {
 			width: 100%;
-			height: 500px;
+			height: 600px;
 			cursor: pointer;
 			display: block;
 			object-fit: contain; // якщо хочеш, щоб заповнювало контейнер
-
 		}
 	}
 }
@@ -438,12 +437,66 @@ h2 {
 .card {
 	background: #fff;
 	border-radius: 12px;
-	padding: 15px;
+	padding: 5px;
 	text-align: center;
 	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-	max-width: 250px;
+	max-width: 70%;
 	margin: auto;
 }
+
+img {
+	width: 100%;
+	height: 700px;
+	object-fit: contain;
+	display: block;
+}
+
+@media (max-width: 768px) {
+	.card {
+		max-width: 80%;
+	}
+
+	img {
+		width: 100%;
+		height: auto; // щоб не обрізало пропорції
+		max-height: 400px;
+	}
+
+	.card h3 {
+		margin: 10px 0 5px;
+		font-size: 1.125rem;
+		height: auto;
+		display: block;
+		font-weight: 700;
+	}
+
+	.card p {
+		font-size: 14px;
+		color: #555;
+		margin: 5px 0 10px;
+	}
+
+	.card .price {
+		display: block;
+		font-size: 16px;
+		font-weight: bold;
+		color: #e63946;
+	}
+}
+
+// 	@media (max-width: 768px) {
+// 		width: 600px;
+// 	}
+
+// 	@media (max-width: 480px) {
+// 		width: 400px;
+// 	}
+
+// 	@media (max-width: 340px) {
+// 		width: 100%;
+// 	}
+// }
+
 
 .card img {
 	max-width: 100%;
@@ -454,6 +507,8 @@ h2 {
 .card h3 {
 	margin: 10px 0 5px;
 	font-size: 18px;
+	height: auto;
+	display: block;
 }
 
 .card p {
@@ -472,13 +527,13 @@ h2 {
 // Вподобайки та кошик
 .card-actions {
 	display: flex;
-	justify-content: space-between;
+	justify-content: space-around;
 	margin-top: 10px;
 }
 
 .card-actions button {
-	flex: 1;
-	margin: 0 5px;
+	flex: 0 1 auto;
+	margin: 10px 15px;
 	padding: 8px;
 	border: none;
 	border-radius: 8px;
@@ -511,11 +566,17 @@ h2 {
 
 // .pictures__arts {}
 
-// .pictures__tobuy {}
+.pictures__tobuy {
+	padding: 10px;
+}
 
-// .pictures__contacts {}
+.pictures__contacts {
+	padding: 10px;
+}
 
-// .pictures__information {}
+.pictures__information {
+	padding: 10px;
+}
 
 .footer {
 	margin-top: 0 auto;

@@ -44,8 +44,12 @@ function showSlide(i) {
 	slides.style.transform = `translateX(-${index * 100}%)`;
 }
 
-prevBtn.addEventListener('click', () => showSlide(index - 1));
-nextBtn.addEventListener('click', () => showSlide(index + 1));
+if (nextBtn && prevBtn) {
+	prevBtn.addEventListener('click', () => showSlide(index - 1));
+	nextBtn.addEventListener('click', () => showSlide(index + 1));
+}
+
+
 
 // Автоперемикання(необов'язково)
 // setInterval(() => {
