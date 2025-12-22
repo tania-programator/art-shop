@@ -62,7 +62,20 @@ let favorites = [];
 let cart = [];
 
 // Приклад даних товарів
-const basePath = window.location.pathname.includes('/products/') ? '../img/' : 'img/';
+// const basePath = window.location.pathname.includes('/products/') ? '../img/' : 'img/'; я змінила
+// цей basePath на наступний, коли додалась папка clean, бо була проблема з адресами картинок
+// БАЗОВИЙ ШЛЯХ ДО КАРТИНОК
+const pathParts = window.location.pathname.split('/');
+
+const repoName = window.location.hostname.includes('github.io')
+	? pathParts[1]
+	: '';
+
+const basePath =
+	window.location.origin +
+	'/' +
+	(repoName ? repoName + '/' : '') +
+	'img/';
 const products = [
 	// { id: 1, name: "Spring girl", price: 1200, img: basePath + "Spring_girl.jpg" },
 	{ id: 1, name: "Spring girl", price: 1200, category: "clean", img: basePath + "clean/Spring_girl.jpg" },
