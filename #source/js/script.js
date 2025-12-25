@@ -208,6 +208,6 @@ document.getElementById("cart-btn").addEventListener("click", () => {
 window.addToFavorites = addToFavorites;
 window.addToCart = addToCart;
 // Перехід на сторінку товару
-function goToProduct(id) {
-	window.location.href = `product.html?id=${id}`;
-}
+// function goToProduct(id) {
+// 	window.location.href = `product.html?id=${id}`;
+// }
