@@ -1,4 +1,21 @@
 'use strict';
+// helper-функції для localStorage
+function getFavorites() {
+	return JSON.parse(localStorage.getItem("favorites")) || [];
+}
+
+function saveFavorites(items) {
+	localStorage.setItem("favorites", JSON.stringify(items));
+}
+
+function getCart() {
+	return JSON.parse(localStorage.getItem("cart")) || [];
+}
+
+function saveCart(items) {
+	localStorage.setItem("cart", JSON.stringify(items));
+}
+
 // знаходимо елемент
 const burger = document.querySelector('.header__burger');
 const menu = document.querySelector('.header__menu');
@@ -10,6 +27,8 @@ burger.addEventListener('click', () => {
 	menu.classList.toggle('active');
 	body.classList.toggle('lock'); // додаємо/знімаємо блокування скролу
 });
+
+
 // Перехід по якорях
 const menuLinks = document.querySelectorAll('.header__link');
 
@@ -49,17 +68,16 @@ if (nextBtn && prevBtn) {
 	nextBtn.addEventListener('click', () => showSlide(index + 1));
 }
 
-
-
 // Автоперемикання(необов'язково)
 // setInterval(() => {
 // 	showSlide(index + 1);
 // }, 4500);
 
 // Вподобайки та кошик
-// Масиви для зберігання даних
-let favorites = [];
-let cart = [];
+// Масиви для зберігання даних було видалено після додавання JSON
+// let favorites = [];
+// let cart = [];
+
 
 // Приклад даних товарів
 // const basePath = window.location.pathname.includes('/products/') ? '../img/' : 'img/'; я змінила
@@ -77,13 +95,12 @@ const basePath =
 	(repoName ? repoName + '/' : '') +
 	'img/';
 const products = [
-	// { id: 1, name: "Spring girl", price: 1200, img: basePath + "Spring_girl.jpg" },
 	{ id: 1, name: "Spring girl", price: 1200, category: "clean", img: basePath + "clean/Spring_girl.jpg" },
 	{ id: 2, name: "The life of one rose", price: 1500, category: "lifevsdeath", img: basePath + "lifevsdeath/The_life_of_one_rose.jpg" },
 	{ id: 3, name: "Red flower", price: 1000, category: "decoration", img: basePath + "decoration/Red_flower.jpg" },
 	{ id: 4, name: "Challenge", price: 3000, category: "portraits", img: basePath + "portraits/Challenge.jpg" },
 	{ id: 5, name: "Nice", price: 3000, category: "portraits", img: basePath + "portraits/Nice.jpg" },
-	{ id: 6, name: "Kiss", price: 500, category: "love", img: basePath + "love/Kiss.jpg" },
+	// { id: 6, name: "Kiss", price: 500, category: "love", img: basePath + "love/Kiss.jpg" },
 	{ id: 7, name: "The wind", price: 2500, category: "clean", img: basePath + "clean/The_wind.jpg" },
 	{ id: 8, name: "Flower wall", price: 2000, category: "clean", img: basePath + "clean/Flower_wall.jpg" },
 	{ id: 9, name: "Ukrainian bird", price: 5000, category: "lifevsdeath", img: basePath + "lifevsdeath/Ukrainian_bird.jpg" },
@@ -103,42 +120,93 @@ const products = [
 ];
 
 // Додати у вподобані
+// function addToFavorites(id) {
+// 	id = Number(id);
+// 	const product = products.find(p => p.id === id);
+// 	if (!product) return;
+// 	if (!favorites.some(p => p.id === id)) {
+// 		favorites.push(product);
+// 	}
+// 	updateHeader();
+// }
 function addToFavorites(id) {
 	id = Number(id);
 	const product = products.find(p => p.id === id);
 	if (!product) return;
+
+	const favorites = getFavorites();
+
 	if (!favorites.some(p => p.id === id)) {
 		favorites.push(product);
+		saveFavorites(favorites);
 	}
+
 	updateHeader();
 }
 
 // Додати у кошик
 
+// function addToCart(id) {
+// 	id = Number(id);
+// 	const product = products.find(p => p.id === id);
+// 	if (!product) return;
+// 	cart.push(product);
+// 	updateHeader();
+// }
 function addToCart(id) {
 	id = Number(id);
 	const product = products.find(p => p.id === id);
 	if (!product) return;
+
+	const cart = getCart();   // 🔥 ВАЖЛИВО
 	cart.push(product);
+	saveCart(cart);
+	renderDropdown("cart-dropdown", cart, "cart"); // 🔥 ОЦЕ
+
 	updateHeader();
 }
 
+
 // --- Видалення товару ---
+// function removeItem(id, type) {
+// 	id = Number(id);
+// 	if (type === "fav") {
+// 		favorites = favorites.filter(p => p.id !== id);
+// 		renderDropdown("fav-dropdown", favorites, "fav");
+// 	} else if (type === "cart") {
+// 		cart = cart.filter(p => p.id !== id);
+// 		renderDropdown("cart-dropdown", cart, "cart");
+// 	}
+// 	updateHeader();
+// }
 function removeItem(id, type) {
 	id = Number(id);
+
 	if (type === "fav") {
+		let favorites = getFavorites();
 		favorites = favorites.filter(p => p.id !== id);
+		saveFavorites(favorites);
 		renderDropdown("fav-dropdown", favorites, "fav");
-	} else if (type === "cart") {
+	}
+
+	if (type === "cart") {
+		let cart = getCart();
 		cart = cart.filter(p => p.id !== id);
+		saveCart(cart);
 		renderDropdown("cart-dropdown", cart, "cart");
 	}
+
 	updateHeader();
 }
+
 // Оновити лічильники у шапці
+// function updateHeader() {
+// 	document.getElementById("fav-count").textContent = favorites.length;
+// 	document.getElementById("cart-count").textContent = cart.length;
+// }
 function updateHeader() {
-	document.getElementById("fav-count").textContent = favorites.length;
-	document.getElementById("cart-count").textContent = cart.length;
+	document.getElementById("fav-count").textContent = getFavorites().length;
+	document.getElementById("cart-count").textContent = getCart().length;
 }
 
 // --- Рендер списку у dropdown ---
@@ -194,12 +262,23 @@ document.addEventListener("click", (e) => {
 });
 
 // Кнопки у шапці
+// document.getElementById("fav-btn").addEventListener("click", () => {
+// 	renderDropdown("fav-dropdown", favorites, "fav");
+// 	toggleDropdown("fav-dropdown");
+// });
+
+// document.getElementById("cart-btn").addEventListener("click", () => {
+// 	renderDropdown("cart-dropdown", cart, "cart");
+// 	toggleDropdown("cart-dropdown");
+// });
 document.getElementById("fav-btn").addEventListener("click", () => {
+	const favorites = getFavorites();
 	renderDropdown("fav-dropdown", favorites, "fav");
 	toggleDropdown("fav-dropdown");
 });
 
 document.getElementById("cart-btn").addEventListener("click", () => {
+	const cart = getCart();
 	renderDropdown("cart-dropdown", cart, "cart");
 	toggleDropdown("cart-dropdown");
 });
@@ -211,3 +290,7 @@ window.addToCart = addToCart;
 // function goToProduct(id) {
 // 	window.location.href = `product.html?id=${id}`;
 // }
+// ВІДНОВЛЕННЯ ДАНИХ ПРИ ЗАВАНТАЖЕННІ СТОРІНКИ
+document.addEventListener("DOMContentLoaded", () => {
+	updateHeader();
+});
