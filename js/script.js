@@ -1,4 +1,12 @@
 'use strict';
+// Динамічний базовий шлях
+const pathParts = window.location.pathname.split('/');
+
+const repoName = window.location.hostname.includes('github.io')
+	? pathParts[1]
+	: '';
+
+const BASE_URL = window.location.origin + '/' + (repoName ? repoName + '/' : '');
 // helper-функції для localStorage
 function getFavorites() {
 	return JSON.parse(localStorage.getItem("favorites")) || [];
@@ -83,11 +91,6 @@ if (nextBtn && prevBtn) {
 // const basePath = window.location.pathname.includes('/products/') ? '../img/' : 'img/'; я змінила
 // цей basePath на наступний, коли додалась папка clean, бо була проблема з адресами картинок
 // БАЗОВИЙ ШЛЯХ ДО КАРТИНОК
-const pathParts = window.location.pathname.split('/');
-
-const repoName = window.location.hostname.includes('github.io')
-	? pathParts[1]
-	: '';
 
 const basePath =
 	window.location.origin +
@@ -232,7 +235,10 @@ function renderDropdown(containerId, items, type) {
 
 	if (type === "cart") {
 		const total = items.reduce((sum, p) => sum + p.price, 0);
-		container.innerHTML += `<div class="dropdown-item total"><b>Разом: ${total} грн</b></div>`;
+		container.innerHTML += `<div class="dropdown-item total"><b>Разом: ${total} грн</b></div>
+		<button class="checkout-btn" id="checkout-btn">
+				Оформити замовлення
+			</button>`;
 	}
 }
 
@@ -258,6 +264,10 @@ document.addEventListener("click", (e) => {
 	const btn = e.target.closest(".remove-btn");
 	if (btn) {
 		removeItem(btn.dataset.id, btn.dataset.type);
+	}
+	//Перехід при кліку на окрему сторінку
+	if (e.target.id === "checkout-btn") {
+		window.location.href = BASE_URL + "checkout.html";
 	}
 });
 

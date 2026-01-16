@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Оформлення замовлення</title>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header">
+			<div class="container">
+				<h1>Оформлення замовлення</h1>
+			</div>
+		</header>
+
+		<main class="container checkout">
+			<h2>Ваше замовлення</h2>
+
+			<div id="order-items"></div>
+			<p class="order-total">
+				<strong>Разом: <span id="order-total">0</span> грн</strong>
+			</p>
+
+			<h2>Контактні дані</h2>
+
+			<form id="order-form">
+				<input type="text" name="name" placeholder="Ваше імʼя" required>
+				<input type="email" name="email" placeholder="Email" required>
+				<input type="tel" name="phone" placeholder="Телефон" required>
+				<textarea name="comment" placeholder="Коментар (необовʼязково)"></textarea>
+
+				<button type="submit" class="checkout-btn">
+					Надіслати заявку
+				</button>
+			</form>
+		</main>
+	</div>
+	<script src="js/checkout.js"></script>
+</body>
+
+</html>
