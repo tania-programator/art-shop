@@ -6,16 +6,22 @@
 /*--------------------*/
 body {
 	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
-	justify-content: center;
-	align-items: center;
-	height: 100%;
 	background: #f3f3f3;
 	overflow-x: hidden;
+	overflow-y: auto;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+}
 
+h1 {
+	font-size: 2.5rem;
+	margin: 0 0 1.25rem 0;
+	text-align: center;
 }
 
 .wrapper {
-	min-height: 100dvh;
+	flex: 1;
 	display: flex;
 	flex-direction: column;
 	width: 100%;
@@ -202,6 +208,11 @@ body {
 		overflow: hidden;
 	}
 
+	h1 {
+		font-size: 1.875rem;
+		margin: 0 0 0.9375rem 0;
+	}
+
 	.header__burger {
 		position: relative;
 		display: block;
@@ -259,7 +270,6 @@ body {
 		top: -100%;
 		left: 0;
 		width: 100%;
-		height: 100%;
 		overflow: auto;
 		background-color: #5a7379;
 		padding: 4.375rem .625rem 1.25rem .625rem;
@@ -310,6 +320,11 @@ body {
 		font-size: 0.75rem;
 		margin: 0 0.2rem;
 	}
+
+	h1 {
+		font-size: 1.5rem;
+		margin: 0 0 0.75rem 0;
+	}
 }
 
 @media (max-width: 23.4375rem) {
@@ -321,6 +336,11 @@ body {
 	.dropdown {
 		width: 10rem;
 		font-size: 0.8rem;
+	}
+
+	h1 {
+		font-size: 1.25rem;
+		margin: 0 0 0.6rem 0;
 	}
 }
 
@@ -1005,6 +1025,7 @@ img {
 @media (max-width: 56.25rem) {
 	.checkout {
 		padding: 1.5rem 0;
+		min-height: auto;
 	}
 
 	.checkout h2 {
@@ -1036,6 +1057,7 @@ img {
 	.checkout {
 		margin-top: 5.625rem;
 		padding: 1rem 0;
+		min-height: auto;
 	}
 
 	.checkout h2 {
@@ -1083,6 +1105,7 @@ img {
 @media (max-width: 23.4375rem) {
 	.checkout {
 		padding: 0.75rem 0;
+		min-height: auto;
 	}
 
 	.checkout h2 {
