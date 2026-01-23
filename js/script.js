@@ -236,8 +236,8 @@ function renderDropdown(containerId, items, type) {
 	if (type === "cart") {
 		const total = items.reduce((sum, p) => sum + p.price, 0);
 		container.innerHTML += `<div class="dropdown-item total"><b>Разом: ${total} грн</b></div>
-		<button class="checkout-btn" id="checkout-btn">
-				Оформити замовлення
+		<button class="checkout-btn" id="checkout-btn" style="width: 100%; box-sizing: border-box; padding: 0.75rem 1rem; margin-top: 0.625rem;">
+				Замовити
 			</button>`;
 	}
 }
