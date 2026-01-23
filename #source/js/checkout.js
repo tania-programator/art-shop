@@ -1,4 +1,8 @@
 'use strict';
+// 🔐 ІНІЦІАЛІЗАЦІЯ EMAILJS
+(function () {
+	emailjs.init("02WFMVxSPn4imGlUB"); // ⬅️ встав свій Public Key
+})();
 
 // Санітизація HTML
 function escapeHtml(text) {
@@ -78,8 +82,27 @@ document.getElementById("order-form").addEventListener("submit", (e) => {
 	console.log("Заявка:", order);
 
 	// ❗ Тут пізніше буде EmailJS / сервер
-	alert("Дякуємо! Заявка відправлена ❤️");
+	const templateParams = {
+		name: formData.get("name"),
+		email: formData.get("email"),
+		phone: formData.get("phone"),
+		address: formData.get("address"),
+		items: cart.map(p => `${p.name} — ${p.price} грн`).join("\n"),
+		total: total
+	};
 
-	clearCart();
-	window.location.href = "index.html";
+	emailjs.send(
+		"service_rq84wv9",   // ⬅️ service ID
+		"template_6uk0ry7",  // ⬅️ template ID
+		templateParams
+	)
+		.then(() => {
+			alert("Дякуємо! Заявка відправлена ❤️");
+			clearCart();
+			window.location.href = "index.html";
+		})
+		.catch(err => {
+			console.error(err);
+			alert("Помилка при відправці заявки 😢");
+		});
 });
