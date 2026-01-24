@@ -1,5 +1,4 @@
 @charset "UTF-8";
-
 /*Обнулення, звертаємось до всього документа*/
 /*обнуляє відступи та границі*/
 * {
@@ -191,7 +190,6 @@ h1 {
 .icon-like-btn {
   background: #ffccd5;
 }
-
 .icon-like-btn:hover {
   background: #ff99aa;
 }
@@ -199,7 +197,6 @@ h1 {
 .icon-cart-btn {
   background: #d1f7c4;
 }
-
 .icon-cart-btn:hover {
   background: #aaf7a2;
 }
@@ -291,12 +288,10 @@ h1 {
   body.lock {
     overflow: hidden;
   }
-
   h1 {
     font-size: 1.875rem;
     margin: 0 0 0.9375rem 0;
   }
-
   .header__burger {
     position: relative;
     display: block;
@@ -305,7 +300,6 @@ h1 {
     z-index: 51;
     display: block !important;
   }
-
   .header__burger::before,
   .header__burger::after {
     content: "";
@@ -316,7 +310,6 @@ h1 {
     left: 0;
     transition: all 0.3s ease 0s;
   }
-
   .header__burger span {
     position: absolute;
     background-color: #fff;
@@ -326,29 +319,23 @@ h1 {
     top: 0.5625rem;
     transition: all 0.3s ease 0s;
   }
-
   .header__burger::before {
     top: 0;
   }
-
   .header__burger::after {
     bottom: 0;
   }
-
   .header__burger.active::before {
     transform: rotate(45deg);
     top: 0.5625rem;
   }
-
   .header__burger.active::after {
     transform: rotate(-45deg);
     bottom: 0.5625rem;
   }
-
   .header__burger.active span {
     transform: scale(0);
   }
-
   .header__menu {
     position: fixed;
     top: -100%;
@@ -359,33 +346,26 @@ h1 {
     padding: 4.375rem 0.625rem 1.25rem 0.625rem;
     transition: all 0.3s ease 0s;
   }
-
   .header__menu.active {
     top: 0;
     transition: all 0.3s ease 0s;
   }
-
   .header__body {
     height: 3.125rem;
   }
-
   .header__logo {
     flex: 0 0 2.5rem;
   }
-
   .header__list {
     display: block;
   }
-
   .header__list li {
     margin: 0 0 1.25rem 0;
   }
-
   .header__link {
     font-size: 1.5rem;
     line-height: 1.5;
   }
-
   .icons button {
     flex: 1;
     margin: 0 0.3125rem;
@@ -397,37 +377,31 @@ h1 {
     transition: 0.3s;
   }
 }
-
 @media (max-width: 37.5rem) {
   .icons button {
     padding: 0.4rem;
     font-size: 0.75rem;
     margin: 0 0.2rem;
   }
-
   h1 {
     font-size: 1.5rem;
     margin: 0 0 0.75rem 0;
   }
 }
-
 @media (max-width: 23.4375rem) {
   .icons button {
     padding: 0.3rem;
     font-size: 0.65rem;
   }
-
   .dropdown {
     width: 10rem;
     font-size: 0.8rem;
   }
-
   h1 {
     font-size: 1.25rem;
     margin: 0 0 0.6rem 0;
   }
 }
-
 .layout {
   flex-grow: 1;
 }
@@ -456,50 +430,41 @@ h2 {
   .content {
     margin: 0;
   }
-
   .content__text {
     font-size: 1.125rem;
     line-height: 1.5625rem;
   }
-
   h2 {
     margin: 0 0 0.9375rem 0;
     font-weight: 700;
     font-size: 1.875rem;
     scroll-margin-top: 6.25rem;
   }
-
   #about {
     margin-top: 5.625rem;
   }
 }
-
 @media (max-width: 23.4375rem) {
   h2 {
     font-size: 1.5rem;
     margin-bottom: 0.75rem;
   }
-
   .content__text {
     font-size: 1rem;
   }
 }
-
 .slider {
   position: relative;
   overflow: hidden;
   width: 100%;
 }
-
 .slider .slides {
   display: flex;
   transition: transform 0.9s ease;
 }
-
 .slider .slide {
   min-width: 100%;
 }
-
 .slider .slide img {
   width: 100%;
   height: 37.5rem;
@@ -513,31 +478,26 @@ h2 {
     height: 30rem;
   }
 }
-
 @media (max-width: 48rem) {
   .slider .slide img {
     height: 25rem;
   }
 }
-
 @media (max-width: 37.5rem) {
   .slider .slide img {
     height: 18.75rem;
   }
 }
-
 @media (max-width: 30rem) {
   .slider .slide img {
     height: 16.25rem;
   }
 }
-
 @media (max-width: 23.4375rem) {
   .slider .slide img {
     height: 13.75rem;
   }
 }
-
 .slider-btn {
   position: absolute;
   top: 50%;
@@ -551,15 +511,12 @@ h2 {
   border-radius: 50%;
   z-index: 10;
 }
-
 .slider-btn.prev {
   left: 0.9375rem;
 }
-
 .slider-btn.next {
   right: 0.9375rem;
 }
-
 .slider-btn:hover {
   background: rgba(0, 0, 0, 0.8);
 }
@@ -569,30 +526,25 @@ h2 {
     font-size: 1.5rem;
     padding: 0.5rem 0.75rem;
   }
-
   .slider-btn.prev {
     left: 0.5rem;
   }
-
   .slider-btn.next {
     right: 0.5rem;
   }
 }
-
 @media (max-width: 37.5rem) {
   .slider-btn {
     font-size: 1.25rem;
     padding: 0.4rem 0.6rem;
   }
 }
-
 @media (max-width: 23.4375rem) {
   .slider-btn {
     font-size: 1rem;
     padding: 0.3rem 0.5rem;
   }
 }
-
 .card {
   background: #fff;
   border-radius: 0.75rem;
@@ -620,25 +572,21 @@ img {
   .card {
     max-width: 75%;
   }
-
   img {
     width: 100%;
     height: auto;
     max-height: 30rem;
   }
 }
-
 @media (max-width: 48rem) {
   .card {
     max-width: 85%;
   }
-
   img {
     width: 100%;
     height: auto;
     max-height: 25rem;
   }
-
   .card h3 {
     margin: 0.625rem 0 0.3125rem;
     font-size: 18px;
@@ -646,13 +594,11 @@ img {
     display: block;
     font-weight: 700;
   }
-
   .card p {
     font-size: 0.875rem;
     color: #555;
     margin: 0.3125rem 0 0.625rem;
   }
-
   .card .price {
     display: block;
     font-size: 1rem;
@@ -660,57 +606,46 @@ img {
     color: #e63946;
   }
 }
-
 @media (max-width: 37.5rem) {
   .card {
     max-width: 95%;
     padding: 0.5rem;
   }
-
   img {
     max-height: 20rem;
   }
-
   .card h3 {
     font-size: 1rem;
     margin: 0.5rem 0 0.25rem;
   }
-
   .card p {
     font-size: 0.8rem;
     margin: 0.25rem 0 0.5rem;
   }
-
   .card .price {
     font-size: 0.95rem;
   }
 }
-
 @media (max-width: 23.4375rem) {
   .card {
     max-width: 100%;
     padding: 0.25rem;
   }
-
   img {
     max-height: 18rem;
   }
-
   .card h3 {
     font-size: 0.95rem;
     margin: 0.4rem 0 0.2rem;
   }
-
   .card p {
     font-size: 0.75rem;
     margin: 0.2rem 0 0.4rem;
   }
-
   .card .price {
     font-size: 0.9rem;
   }
 }
-
 .card img {
   max-width: 100%;
   border-radius: 0.5rem;
@@ -762,7 +697,6 @@ img {
     margin: 0.5rem 0.5rem;
   }
 }
-
 @media (max-width: 23.4375rem) {
   .card-actions button {
     padding: 0.3rem 0.4rem;
@@ -770,7 +704,6 @@ img {
     margin: 0.4rem 0.3rem;
   }
 }
-
 .like-btn {
   background: #ffccd5;
 }
@@ -810,7 +743,6 @@ img {
   z-index: 50;
   background-color: #749aa5;
 }
-
 .footer:hover {
   background-color: rgba(0, 0, 0, 0.8);
 }
@@ -827,20 +759,17 @@ img {
     padding: 0.75rem 1rem;
     font-size: 0.875rem;
   }
-
   .footer__container {
     flex-direction: column;
     align-items: center;
   }
 }
-
 @media (max-width: 23.4375rem) {
   .footer {
     padding: 0.5rem 0.75rem;
     font-size: 0.8rem;
   }
 }
-
 .grid-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(15.625rem, 1fr));
@@ -868,7 +797,7 @@ img {
 }
 
 .card img,
-.grid-item>img {
+.grid-item > img {
   width: 100%;
   height: 12.5rem;
   object-fit: cover;
@@ -890,7 +819,6 @@ img {
     gap: 1rem;
   }
 }
-
 /* Якщо екран менше ніж 37.5rem → 1 колонка */
 @media (max-width: 37.5rem) {
   .grid-container {
@@ -899,50 +827,40 @@ img {
     gap: 0.75rem;
     padding: 0.5rem;
   }
-
   .grid-item {
     padding: 0.5rem;
   }
-
-  .grid-item>img {
+  .grid-item > img {
     height: 12rem;
   }
-
   .grid-item p {
     padding: 0.5rem;
     font-size: 0.9rem;
   }
 }
-
 /* Якщо екран менше ніж 23.4375rem → дуже малий екран */
 @media (max-width: 23.4375rem) {
   .grid-container {
     padding: 0.25rem;
     gap: 0.5rem;
   }
-
   .grid-item {
     padding: 0.25rem;
   }
-
-  .grid-item>img {
+  .grid-item > img {
     height: 10rem;
   }
-
   .grid-item p {
     padding: 0.25rem;
     font-size: 0.8rem;
   }
 }
-
 /* ========== CHECKOUT PAGE STYLES ========== */
 .checkout {
   margin-top: 8.125rem;
-  padding: 2.5rem 0.625rem;
-  min-height: calc(100vh - 8.125rem);
+  padding: 2.5rem 0;
+  min-height: 100vh;
   background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-  display: flex;
-  flex-direction: column;
 }
 
 .checkout h2 {
@@ -952,9 +870,6 @@ img {
   margin-bottom: 1.875rem;
   border-bottom: 0.25rem solid #749aa5;
   padding-bottom: 0.625rem;
-  max-width: 50rem;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 #order-items {
@@ -962,9 +877,6 @@ img {
   grid-template-columns: repeat(auto-fit, minmax(15.625rem, 1fr));
   gap: 1.25rem;
   margin-bottom: 2.5rem;
-  max-width: 50rem;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .order-item {
@@ -1015,9 +927,6 @@ img {
   color: #e63946;
   text-align: center;
   border-left: 0.375rem solid #749aa5;
-  max-width: 50rem;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .order-total strong {
@@ -1037,8 +946,6 @@ img {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  max-width: 50rem;
-  margin: 0 auto;
 }
 
 #order-form input,
@@ -1106,9 +1013,6 @@ img {
   background: #fff;
   border-radius: 0.75rem;
   box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.1);
-  max-width: 50rem;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 #order-items p {
@@ -1120,138 +1024,111 @@ img {
 /* Адаптивність */
 @media (max-width: 56.25rem) {
   .checkout {
-    padding: 1.5rem 0.625rem;
-    min-height: calc(100vh - 8.125rem);
+    padding: 1.5rem 0;
+    min-height: auto;
   }
-
   .checkout h2 {
     font-size: 1.5rem;
     margin-bottom: 1.25rem;
   }
-
   #order-items {
     grid-template-columns: repeat(auto-fit, minmax(12.5rem, 1fr));
     gap: 1rem;
   }
-
   #order-form {
     padding: 1.5rem;
   }
-
   .order-item img {
     height: 10rem;
   }
-
   .checkout-btn {
     padding: 0.875rem;
     font-size: 1rem;
     line-height: 1.5;
   }
 }
-
 @media (max-width: 37.5rem) {
   .checkout {
     margin-top: 5.625rem;
-    padding: 1.25rem 0.625rem;
-    min-height: calc(100vh - 5.625rem);
+    padding: 1rem 0;
+    min-height: auto;
   }
-
   .checkout h2 {
     font-size: 1.25rem;
     margin-bottom: 1rem;
   }
-
   #order-items {
     grid-template-columns: 1fr;
     gap: 0.75rem;
   }
-
   .order-item {
     padding: 1rem;
   }
-
   .order-item img {
     height: 8.75rem;
     margin-bottom: 0.75rem;
   }
-
   .order-total {
     padding: 1rem;
     font-size: 1.125rem;
   }
-
   #order-form {
     padding: 1.25rem;
     gap: 0.75rem;
-    margin-bottom: 1.5rem;
   }
-
   #order-form input,
   #order-form textarea {
     padding: 0.625rem 0.875rem;
     font-size: 0.95rem;
   }
-
   .checkout-btn {
     padding: 0.75rem 1rem;
     font-size: 0.95rem;
     line-height: 1.5;
   }
 }
-
 @media (max-width: 23.4375rem) {
   .checkout {
-    padding: 1.25rem 0.625rem 3rem 0.625rem;
-    min-height: calc(100vh - 5.625rem);
+    padding: 0.75rem 0;
+    min-height: auto;
   }
-
   .checkout h2 {
     font-size: 1.125rem;
     padding-bottom: 0.5rem;
     margin-bottom: 0.75rem;
   }
-
   #order-items {
     gap: 0.5rem;
     margin-bottom: 1.5rem;
   }
-
   .order-item {
     padding: 0.75rem;
   }
-
   .order-item img {
     height: 7rem;
     margin-bottom: 0.5rem;
   }
-
   .order-item p {
     font-size: 0.85rem;
     margin: 0.3rem 0;
   }
-
   .order-total {
     padding: 0.75rem;
     font-size: 1rem;
     margin-bottom: 1.5rem;
   }
-
   #order-form {
     padding: 1rem;
     gap: 0.6rem;
-    margin-bottom: 3rem;
   }
-
   #order-form input,
   #order-form textarea {
     padding: 0.5rem 0.75rem;
     font-size: 0.9rem;
   }
-
   #order-form textarea {
     min-height: 5rem;
   }
-
   .checkout-btn {
     padding: 0.75rem 1rem;
     font-size: 0.9rem;

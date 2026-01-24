@@ -99,7 +99,7 @@ const basePath =
 	'img/';
 const products = [
 	{ id: 1, name: "Spring girl", price: 1200, category: "clean", img: basePath + "clean/Spring_girl.jpg" },
-	{ id: 2, name: "The life of one rose", price: 1500, category: "lifevsdeath", img: basePath + "lifevsdeath/The_life_of_one_rose.jpg" },
+	{ id: 2, name: "The life of one rose", price: 6000, category: "lifevsdeath", img: basePath + "lifevsdeath/The_life_of_one_rose.jpg" },
 	{ id: 3, name: "Red flower", price: 1000, category: "decoration", img: basePath + "decoration/Red_flower.jpg" },
 	{ id: 4, name: "Challenge", price: 3000, category: "portraits", img: basePath + "portraits/Challenge.jpg" },
 	{ id: 5, name: "Nice", price: 3000, category: "portraits", img: basePath + "portraits/Nice.jpg" },
