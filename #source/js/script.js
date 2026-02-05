@@ -103,7 +103,7 @@ const products = [
 	{ id: 3, name: "Red flower", price: 1000, category: "decoration", img: basePath + "decoration/Red_flower.jpg" },
 	{ id: 4, name: "Challenge", price: 3000, category: "portraits", img: basePath + "portraits/Challenge.jpg" },
 	{ id: 5, name: "Nice", price: 3000, category: "portraits", img: basePath + "portraits/Nice.jpg" },
-	// { id: 6, name: "Kiss", price: 500, category: "love", img: basePath + "love/Kiss.jpg" },
+	{ id: 6, name: "Questions", price: 1000, category: "whiteonblack", img: basePath + "whiteonblack/Questions.jpg" },
 	{ id: 7, name: "The wind", price: 2500, category: "clean", img: basePath + "clean/The_wind.jpg" },
 	{ id: 8, name: "Flower wall", price: 2000, category: "clean", img: basePath + "clean/Flower_wall.jpg" },
 	{ id: 9, name: "Ukrainian bird", price: 5000, category: "lifevsdeath", img: basePath + "lifevsdeath/Ukrainian_bird.jpg" },

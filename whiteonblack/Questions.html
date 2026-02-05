@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questions</title>
+    <link rel="stylesheet" href="../css/style.css"> <!-- піднімаємось на рівень вище -->
+</head>
+
+<body>
+    <div class="wrapper">
+        <header class="header">
+            <!-- Обмежувач ширини контентної частини -->
+            <div class="container">
+                <!-- майбутній флекс-контейнер -->
+                <div class="header__body">
+                    <!-- логотип у вигляді посилання -->
+                    <a href="#" class="header__logo">
+                        <!-- картинка логотипу -->
+                        <img src="../img/avatar.jpg" alt="аватар">
+                    </a>
+                    <!-- бургер -->
+                    <div class="header__burger">
+                        <!-- span він потрібен для малювання бургера -->
+                        <span></span>
+                    </div>
+                    <!-- меню -->
+                    <nav class="header__menu">
+                        <!-- список -->
+                        <ul class="header__list">
+                            <li>
+                                <a href="../index.html#about" class="header__link">Про художника</a>
+                            </li>
+                            <li>
+                                <a href="../paintings.html" class="header__link">Картини</a>
+                            </li>
+                            <li>
+                                <a href="../index.html#tobuy" class="header__link">Як купити картину</a>
+                            </li>
+                            <li>
+                                <a href="../index.html#contacts" class="header__link">Контакти</a>
+                            </li>
+                            <li>
+                                <a href="../index.html#information" class="header__link">Корисна інформація</a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <div class="icons">
+                        <div class="dropdown-wrapper">
+                            <button id="fav-btn" class="icon-like-btn">❤️(<span id="fav-count">0</span>)</button>
+                            <div id="fav-dropdown" class="dropdown"></div>
+                        </div>
+                        <div class="dropdown-wrapper">
+                            <button id="cart-btn" class="icon-cart-btn">🛒(<span id="cart-count">0</span>)</button>
+                            <div id="cart-dropdown" class="dropdown"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <main class="product-page">
+            <section class="content">
+                <div class="container">
+                    <div class="content__text">
+                        <!-- Розділ "Білим по чорному" -->
+                        <div class="content__clean">
+                            <h2 id="about">Питання</h2>
+                            <p>Картина виконана в мінімалістичному стилі, що допомагає глядачу зосередитись на
+                                головному. Чорний та білий колір дає вічуття лаконічності, водночас ці кольори є
+                                контрастними один до одного. Початок та кінець сходинок невідомий, що дає відчуття
+                                незавершеності. Картина ідеально підійде як для офісу, так і для молодої, амбітної
+                                особистості, яка завжди вдосконалює себе, є в самопізнанні та саморозвитку. На картині
+                                зображена саме дитина. аби закцентувати на тому, що для досягнення цілей ми маємо бути
+                                як діти: допитливими, енергійними, гнучкими, з креативним, нестандартним мисленням.</p>
+                            <p>Робота виконана на якісному чорному картоні білою ручкою від відомого японського
+                                виробника "Gelly Roll Sakura".</p>
+                            <p>Розміри картини: 21,0 х 29,7 см, що ідеально підходять, щоб повісити її на стіну. Вона не
+                                буде перевантажувати простір.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="slider">
+                <div class="slides">
+
+                    <!-- Питання -->
+                    <div class="slide">
+                        <div class="card">
+                            <div class="card-actions">
+                                <button class="like-btn" onclick="addToFavorites(6)">❤️ Вподобати</button>
+                                <button class="cart-btn" onclick="addToCart(6)">🛒 До кошика</button>
+                            </div>
+                            <img src="../img/whiteonblack/Questions.jpg" alt="Questions">
+                            <h3>Questions</h3>
+                            <p>Опис картини Questions.</p>
+                            <span class="price">1000 грн</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer class="footer">
+            <div class="footer__container">
+                <div class="footer__copirighting">Copirighting ©</div>
+                <div class="footer__cards">Artopice ©</div>
+            </div>
+        </footer>
+    </div>
+    <script src="../js/script.js"></script>
+
+</body>
+
+</html>

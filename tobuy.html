@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To buy</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <header class="header">
+            <!-- Обмежувач ширини контентної частини -->
+            <div class="container">
+                <!-- майбутній флекс-контейнер -->
+                <div class="header__body">
+                    <!-- логотип у вигляді посилання -->
+                    <a href="#" class="header__logo">
+                        <!-- картинка логотипу -->
+                        <img src="img/avatar.jpg" alt="аватар">
+                    </a>
+                    <!-- бургер -->
+                    <div class="header__burger">
+                        <!-- span він потрібен для малювання бургера -->
+                        <span></span>
+                    </div>
+                    <!-- меню -->
+                    <nav class="header__menu">
+                        <!-- список -->
+                        <ul class="header__list">
+                            <li>
+                                <a href="index.html#about" class="header__link">Про художника</a>
+                            </li>
+                            <li>
+                                <a href="paintings.html" class="header__link">Картини</a>
+                            </li>
+                            <li>
+                                <a href="index.html#tobuy" class="header__link">Як купити картину</a>
+                            </li>
+                            <li>
+                                <a href="index.html#contacts" class="header__link">Контакти</a>
+                            </li>
+                            <li>
+                                <a href="index.html#information" class="header__link">Корисна інформація</a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <div class="icons">
+                        <div class="dropdown-wrapper">
+                            <button id="fav-btn" class="icon-like-btn">❤️(<span id="fav-count">0</span>)</button>
+                            <div id="fav-dropdown" class="dropdown"></div>
+                        </div>
+                        <div class="dropdown-wrapper">
+                            <button id="cart-btn" class="icon-cart-btn">🛒(<span id="cart-count">0</span>)</button>
+                            <div id="cart-dropdown" class="dropdown"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <main class="product-page">
+            <section class="content">
+                <div class="container">
+                    <div class="content__text">
+                        <!-- Як вибрати картину?-->
+                        <div class="content__clean">
+                            <h2 id="about">Як вибрати картину</h2>
+                            <p>Вибір картини залежить від ваших особистих смаків та інтересів. Розгляньте різні стилі та
+                                теми, які вам подобаються.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="slider">
+                <img src="img/whiteonblack/Questions.jpg" alt="Questions">
+                <p class="slider__description">Картина додає помешканню настрою та затишку.</p>
+            </div>
+        </main>
+        <footer class="footer">
+            <div class="footer__container">
+                <div class="footer__copirighting">Copirighting ©</div>
+                <div class="footer__cards">Artopice ©</div>
+            </div>
+        </footer>
+    </div>
+    <script src="../js/script.js"></script>
+
+</body>
+
+</html>
